@@ -1,0 +1,39 @@
+
+.auth-part{
+  background-color: var(--Tertiary);
+  border-radius: 40px 40px 0 0;
+  border-top: 10px solid var(--secondary);
+  padding: 70px;
+}
+
+.form-input{
+    box-shadow: 0 0 4px var(--primary);
+    height: 44px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.form-select{
+    width: 32%;
+    border: 0;
+    padding: 6px 12px;
+    font-weight: 500;
+    border-radius: 0;
+    border-right: 1px solid var(--primary-hover);
+}
+
+.form-control:focus, .form-select:focus{
+    outline: none;
+    /* border: none; */
+    box-shadow: none;
+}
+
+.newUser{
+    color: var(--primary);
+    font-weight: 700;
+    transition: all ease-in-out 0.3s;
+    
+    &:hover{
+        text-decoration: underline;
+    }
+}

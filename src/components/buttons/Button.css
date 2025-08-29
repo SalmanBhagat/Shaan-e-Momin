@@ -1,0 +1,70 @@
+.btn {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all ease-in-out 0.3s;
+}
+
+.btn-site-primary {
+  background-color: var(--primary);
+  color: var(--Tertiary);
+   border: 2px solid var(--primary);
+
+  &.outline {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  
+  &:hover{
+    background-color: var(--primary-hover);
+  }
+}
+
+.btn-site-secondary {
+  background-color: var(--secondary);
+  color: var(--Tertiary);
+    border: 2px solid var(--secondary);
+
+  &.outline {
+    border-color: var(--secondary);
+    color: var(--secondary);
+  }
+  &:hover{
+    background-color: var(--secondary-hover);
+  }
+}
+
+.outline {
+  background-color: transparent !important;
+  border: 2px solid transparent;
+}
+
+.btn-site-gradient {
+  background: var(--primary-gradient);
+  color: var(--Tertiary);
+  border: none;
+  padding: 22px 32px;
+}
+
+.btn.rounded {
+  border-radius: 40px !important;
+}
+
+.btn-icon-only {
+  padding: 0;             /* default padding hatao */
+  width: 60px;            /* fixed width */
+  height: 60px;           /* height same as width */
+  border-radius: 50%;     /* pure circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Btn Hover */
+/* .btn-hover-primary:hover{
+  background-color: var(--primary-hover);
+} */

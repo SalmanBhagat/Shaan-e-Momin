@@ -1,0 +1,73 @@
+/* Import Font Utility */
+@import url(Fonts.css);
+
+:root {
+  /* Color Utility Var */
+  --primary: #2dc97a;
+  --secondary: #ff9933;
+  --Tertiary: #ffffff;
+  --dark: #101420;
+  --black: #000000;
+
+  /* Gradient Color */
+  --primary-gradient: linear-gradient(135deg, #2dc97a, #ff9933);
+
+  /* Hover Color */
+  --primary-hover: rgba(45, 201, 122, 0.5);
+  --secondary-hover: rgba(255, 153, 51, 0.5);
+
+  /* Font Utility */
+  --font-family-base: "Rubik", sans-serif;
+}
+
+body {
+  font-family: var(--font-family-base);
+  color: var(--dark);
+  background-color: #E5E5E5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+
+/*----- Common Auth Part Style -----*/
+.auth-wrapper {
+  margin: auto;
+  max-width: 429px;
+  background-color: var(--primary);
+  margin-top: 20px;
+}
+
+.banner-wrapper img {
+  max-width: 326px;
+  margin: auto;
+  padding: 46px 0px;
+}

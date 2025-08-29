@@ -1,0 +1,18 @@
+
+/* Normal Rubik Fonts */
+@font-face {
+    font-family: 'Rubik';
+    src: url('./fonts/Rubik-Font.ttf');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Italic Rubik Font */ 
+@font-face {
+    font-family: 'Rubik-Italic';
+    src: url('./fonts/Rubik-Italic-Font.ttf');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
