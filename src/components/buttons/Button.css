@@ -64,7 +64,7 @@
   justify-content: center;
 }
 
-/* Btn Hover */
-/* .btn-hover-primary:hover{
-  background-color: var(--primary-hover);
+/* .btn:focus{
+  border: 0;
+  outline: none;
 } */

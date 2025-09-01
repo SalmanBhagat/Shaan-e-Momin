@@ -10,6 +10,7 @@ const CommonButton = ({
   disabled = false,
   icon = false,
   className = "",
+  onClick = () => {},
   children
 }) => {
 
@@ -35,6 +36,7 @@ const CommonButton = ({
     <button
       type={type}
       className={classes.trim()}
+      onClick={onClick}
     >
       {children}
     </button>
