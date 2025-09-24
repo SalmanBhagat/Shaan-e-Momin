@@ -1,7 +1,7 @@
 import { Form } from "react-bootstrap";
 import CommonButton from "../../components/buttons/CommonButton";
 import { Link } from "react-router-dom";
-import "./Login.css";
+import "./SignUp.css";
 import { useEffect, useState } from "react";
 import { api } from "../../@core/APIs/Api";
 import z from "zod";
@@ -15,7 +15,7 @@ const schema = z.object({
   mobile_number: z.number({ error: "Phone number is required" }),
 });
 
-function Login() {
+function SignUP() {
   // Connection to react-hook-form + zod resolver
   const {
     register,
@@ -26,7 +26,6 @@ function Login() {
   // State Variebles
   const [countryCode, setCountryCode] = useState([]);
   const [loading, setLoading] = useState(false);
-
 
   // Api calls Country code
   useEffect(() => {
@@ -66,17 +65,59 @@ function Login() {
     <div className="auth-wrapper">
       {/* Loader Spinner */}
       {loading ? (
-        <LoaderSpinner/>
+        <LoaderSpinner />
       ) : (
         <>
           {/* Banner */}
           <div className="banner-wrapper">
-            <img src="/Images/Login/LoginBanner.svg" alt="" />
+            <img src="/Images/SignUp/Sign-up-logo.png" alt="" />
           </div>
 
           {/* Auth Form Part */}
           <div className="auth-part">
             <Form onSubmit={handleSubmit(onSubmit)}>
+                
+              {/* Full Name */}
+              <Form.Group className="mb-5">
+                <Form.Label style={{ fontWeight: "500" }}>
+                  Full Name :
+                </Form.Label>
+               <div className="form-input">
+                   <Form.Control
+                  className="border-0 pt-2"
+                  type="text"
+                  // {...register("mobile_number", { valueAsNumber: true })}
+                />
+                {/* Err Show validation*/}
+                {/* <p
+                  style={{ fontSize: "12px" }}
+                  className="text-danger position-absolute mt-2"
+                >
+                  {errors?.mobile_number?.message}
+                </p> */}
+                </div>
+              </Form.Group>
+
+              {/* Email */}
+              <Form.Group className="mb-5">
+                <Form.Label style={{ fontWeight: "500" }}>Email :</Form.Label>
+                <div className="form-input">
+                  <Form.Control
+                  className="border-0 pt-2"
+                  type="email"
+                  // {...register("mobile_number", { valueAsNumber: true })}
+                />
+                {/* Err Show validation*/}
+                {/* <p
+                  style={{ fontSize: "12px" }}
+                  className="text-danger position-absolute mt-2"
+                >
+                  {errors?.mobile_number?.message}
+                </p> */}
+                </div>
+              </Form.Group>
+
+                {/* Mobile Number */}
               <Form.Group className="mb-5">
                 <Form.Label style={{ fontWeight: "500" }}>
                   Mobile Number
@@ -85,7 +126,7 @@ function Login() {
                   {/* Country code */}
                   <Form.Select
                     className="form-select"
-                    {...register("country_code", {value : '+91'})}
+                    {...register("country_code", { value: "+91" })}
                   >
                     {countryCode.length > 0 &&
                       countryCode.map((item, index) => (
@@ -95,9 +136,9 @@ function Login() {
                       ))}
                   </Form.Select>
 
-                  {/* Mobile Number */}
+                  {/* Digit Input */}
                   <Form.Control
-                    className="border-0"
+                    className="border-0 pt-2"
                     type="number"
                     maxLength={10}
                     {...register("mobile_number", { valueAsNumber: true })}
@@ -113,6 +154,44 @@ function Login() {
                 </p>
               </Form.Group>
 
+              {/* Date Of Birth */}
+              <Form.Group className="mb-5">
+                <Form.Label style={{ fontWeight: "500" }}>Birth Date :</Form.Label>
+                <div className="form-input">
+                  <Form.Control
+                  className="border-0 pt-2"
+                  type="date"
+                  // {...register("mobile_number", { valueAsNumber: true })}
+                />
+                {/* Err Show validation*/}
+                {/* <p
+                  style={{ fontSize: "12px" }}
+                  className="text-danger position-absolute mt-2"
+                >
+                  {errors?.mobile_number?.message}
+                </p> */}
+                </div>
+              </Form.Group>
+
+              {/* Adderess */}
+              <Form.Group className="mb-5">
+                <Form.Label style={{ fontWeight: "500" }}>City/Village Name :</Form.Label>
+                <div className="form-input">
+                  <Form.Control
+                  className="border-0 pt-2"
+                  type="address"
+                  // {...register("mobile_number", { valueAsNumber: true })}
+                />
+                {/* Err Show validation*/}
+                {/* <p
+                  style={{ fontSize: "12px" }}
+                  className="text-danger position-absolute mt-2"
+                >
+                  {errors?.mobile_number?.message}
+                </p> */}
+                </div>
+              </Form.Group>
+
               <Form.Group className="mb-5">
                 {/* Login Button Component Import */}
                 <CommonButton
@@ -120,14 +199,14 @@ function Login() {
                   className="w-100 rounded-4 justify-content-center"
                   onClick={() => setLoading(false)}
                 >
-                  Login
+                  Submit
                 </CommonButton>
               </Form.Group>
 
               <Form.Group className="mb-3 d-flex flex-column align-items-center">
                 <Form.Text className="mb-3 d-block">
                   <Link to="" className="newUser">
-                    New User ?
+                   Already Register?
                   </Link>
                 </Form.Text>
                 {/* Sign Up Button Component Import */}
@@ -136,7 +215,7 @@ function Login() {
                   className="w-75 text-black justify-content-center px-4"
                   rounded
                 >
-                  Sign Up
+                  Login
                 </CommonButton>
               </Form.Group>
             </Form>
@@ -147,4 +226,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default SignUP;
